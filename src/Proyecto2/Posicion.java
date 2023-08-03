@@ -4,7 +4,12 @@ public class Posicion {
     private int posX;
     private int posY;
     public Posicion(){
-
+        this.posX = 0;
+        this.posY = 0;
+    }
+    public Posicion(int posx, int posy){
+        this.posX = posx;
+        this.posY = posy;
     }
     public int getPosX() {
         return posX;
