@@ -25,4 +25,8 @@ public class Habitacion {
     public void setJugador(Personaje j){
         this.j = j;
     }
+    public boolean esunaPuerta(Posicion p){
+        if(p.esIgual(puertaEntrada) || p.esIgual(puertaSalida))
+        return false;
+    }
 }
