@@ -5,7 +5,7 @@ public class Personaje {
     private String nombre;
     private Posicion pos;
     public Personaje(){
-        System.out.println("Cramos un personaje.");
+        System.out.println("Creamos un personaje.");
     }
 
     //Se llamaron a los geters y seters para cada atributo

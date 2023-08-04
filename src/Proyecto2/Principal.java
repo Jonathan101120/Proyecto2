@@ -14,5 +14,7 @@ public class Principal {
         Personaje jugador = new Personaje();
         //Personaje tiene un seter que se le pasa la posicion inicial
         jugador.setPos(posInicial);
+
+        Juego.pintarHabitacion(hab1);
     }
 }
