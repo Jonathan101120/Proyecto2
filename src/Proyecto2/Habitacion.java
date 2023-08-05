@@ -9,6 +9,12 @@ public class Habitacion {
     public Habitacion(){
         System.out.println("Estamos en habitacion");
     }
+    public Habitacion(Posicion puertaIn, Posicion puertaOut, Personaje j){
+        this.puertaEntrada = puertaIn;
+        this.puertaSalida = puertaOut;
+        this.j = j;
+        this.j.setPos(this.puertaEntrada);
+    }
     public Posicion getPuertaEntrada() {
         return puertaEntrada;
     }
@@ -27,6 +33,12 @@ public class Habitacion {
     }
     public boolean esunaPuerta(Posicion p){
         if(p.esIgual(puertaEntrada) || p.esIgual(puertaSalida))
+            return true;
+        return false;
+    }
+    public boolean esunJugador(Posicion p){
+        if (p.esIgual(this.j.getPos()))
+            return true;
         return false;
     }
 }

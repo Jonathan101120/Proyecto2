@@ -24,9 +24,8 @@ public class Posicion {
         this.posY = posY;
     }
     public boolean esIgual(Posicion p){
-        if(p.posX == this.posX && p.posY == this.posY){
+        if(p.posX == this.posX && p.posY == this.posY)
             return true;
-        }
         else return false;
     }
 }
