@@ -1,30 +1,17 @@
 package Proyecto2;
 
-public class Personaje {
-    //Se crearon los atributos de personaje
-    private String nombre;
-    private Posicion pos;
+public class Personaje extends ObjetoJuego{
+
     public Personaje(){
         System.out.println("Creamos un personaje.");
     }
 
-    //Se llamaron a los geters y seters para cada atributo
-    public String getNombre(){
-        return nombre;
-    }
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-    public Posicion getPos() {
-        return pos;
-    }
-    public void setPos(Posicion pos) {
-        this.pos = pos;
-    }
     public void movX(int X){
-        this.pos.setPosX(this.pos.getPosX()+X);
+        Posicion pos = super.getPos();
+        pos.setPosX(pos.getPosX()+X);
     }
     public void movY(int Y) {
-        this.pos.setPosY(this.pos.getPosY()+Y);
+        Posicion pos = super.getPos();
+        pos.setPosY(pos.getPosY()+Y);
     }
 }
