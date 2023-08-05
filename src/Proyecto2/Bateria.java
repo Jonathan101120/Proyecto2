@@ -1,6 +1,6 @@
 package Proyecto2;
 
-public class Bateria {
+public class Bateria extends Pieza{
     public Bateria(){
 
     }
