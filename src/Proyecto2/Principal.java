@@ -5,12 +5,23 @@ public class Principal {
         int accionJuego = -1;
         Scanner in = new Scanner(System.in);
 
-        Posicion puertaIn =new Posicion(0,3);
-        Posicion puertaOut = new Posicion(5, Habitacion.ALTO-1);
-
+        Posicion pIn =new Posicion(0,3);
+        Posicion pOut = new Posicion(5, Habitacion.ALTO-1);
+        ObjetoJuego puertaIn = new ObjetoJuego();
+        puertaIn.setPos(pIn);
+        puertaIn.setLetraMapa(' ');
+        ObjetoJuego puertaOut = new ObjetoJuego();
+        puertaOut.setPos(pOut);
+        puertaIn.setLetraMapa(' ');
 
         Jugador jugador = new Jugador();
-        Habitacion habInicial = new Habitacion(puertaIn,puertaOut,jugador);
+        jugador.setPos(pIn);
+        jugador.setLetraMapa('J');
+        Habitacion habInicial = new Habitacion();
+
+        habInicial.setObjetosJ(jugador);
+        habInicial.setObjetosJ(puertaIn);
+        habInicial.setObjetosJ(puertaOut);
 
         while (accionJuego != Juego.SALIR_JUEGO){
             Juego.pintarHabitacion(habInicial);
