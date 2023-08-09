@@ -17,11 +17,18 @@ public class Principal {
         Jugador jugador = new Jugador();
         jugador.setPos(pIn);
         jugador.setLetraMapa('J');
+
+        Hadron hadron = new Hadron();
+        Posicion pH = new Posicion(3,5);
+        hadron.setPos(pH);
+        hadron.setLetraMapa('H');
+
         Habitacion habInicial = new Habitacion();
 
         habInicial.setObjetosJ(jugador);
         habInicial.setObjetosJ(puertaIn);
         habInicial.setObjetosJ(puertaOut);
+        habInicial.setObjetosJ(hadron);
 
         while (accionJuego != Juego.SALIR_JUEGO){
             Juego.pintarHabitacion(habInicial);

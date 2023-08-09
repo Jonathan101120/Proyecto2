@@ -30,12 +30,20 @@ public class Habitacion {
     public void setPuertaSalida(Posicion puertaSalida){
         this.puertaSalida = puertaSalida;
     }
-    public void setJugador(Personaje j){
-        this.j = j;
-    }
     public void setObjetosJ(ObjetoJuego obj){
         objetosJ[numObjetos] = obj;
         numObjetos++;
+    }
+    public ObjetoJuego getObjetosJ(int objPos){
+        return objetosJ[objPos];
+    }
+    public int hayObjeto(Posicion p){
+        for (int i = 0; i<numObjetos; i++){
+            ObjetoJuego obj = objetosJ[i];
+            Posicion objPosicion = obj.getPos();
+            if (p.esIgual(objPosicion) || p.esIgual(objPosicion)) return i;
+        }
+        return -1;
     }
     public boolean esunaPuerta(Posicion p){
         if(p.esIgual(puertaEntrada) || p.esIgual(puertaSalida))
@@ -46,5 +54,8 @@ public class Habitacion {
         if (p.esIgual(this.j.getPos()))
             return true;
         return false;
+    }
+    public void setJugador(Personaje j){
+        this.j = j;
     }
 }

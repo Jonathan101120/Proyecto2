@@ -10,11 +10,13 @@ public class Juego {
         for(int fila = -1; fila < Habitacion.ALTO; fila++){
             for(int columna = 0; columna <= Habitacion.ANCHO; columna++){
                 Posicion posicionActual = new Posicion(columna,fila);
-                if(h.esunJugador(posicionActual))
-                    System.out.print("J");
+                int posObj = h.hayObjeto(posicionActual);
+                if (posObj != -1) {
+                    ObjetoJuego objJ = h.getObjetosJ(posObj);
+                    System.out.print(objJ.getLetraMapa());
+                }
                 else if(fila == -1 && columna != Habitacion.ANCHO) System.out.print(columna);
                 else if(columna == Habitacion.ANCHO && fila != -1) System.out.print(fila);
-                else if(h.esunaPuerta(posicionActual)) System.out.print(" ");
                 else if(columna == 0 || columna == Habitacion.ANCHO-1) System.out.print("|");
                 else if(fila == 0 || fila == Habitacion.ALTO-1) System.out.print("=");
                 else System.out.print(" ");
